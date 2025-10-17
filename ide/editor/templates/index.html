@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codezen</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i data-feather="code"></i>
+            </div>
+            <nav class="menu">
+                <a href="#" class="menu-item active" title="Files"><i data-feather="file-text"></i></a>
+                <a href="#" class="menu-item" title="Search"><i data-feather="search"></i></a>
+                <a href="#" class="menu-item" title="Source Control"><i data-feather="git-branch"></i></a>
+                <a href="#" class="menu-item" title="Run"><i data-feather="play-circle"></i></a>
+                <a href="#" class="menu-item" title="Extensions"><i data-feather="box"></i></a>
+            </nav>
+            <div class="settings">
+                <a href="#" class="menu-item" title="Account"><i data-feather="user"></i></a>
+                <a href="#" class="menu-item" title="Settings"><i data-feather="settings"></i></a>
+            </div>
+        </aside>
+        <main class="main-content">
+            <div class="file-explorer">
+                <div class="explorer-header">
+                    <span>Explorer</span>
+                    <div>
+                        <a href="#" class="menu-item" title="New File"><i data-feather="file-plus"></i></a>
+                    </div>
+                    <select id="languageSelect">
+                        <option value="python">Python</option>
+                        <option value="php">PHP</option>
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="c">C</option>
+                        <option value="cpp">C++</option>
+                        <option value="java">Java</option>
+                        <option value="swift">Swift</option>
+                        <option value="go">Go</option>
+                    </select>
+                </div>
+                <div id="fileList" class="file-list">
+                    <!-- File list will be populated by script.js -->
+                </div>
+            </div>
+            <div class="editor-area">
+                <div class="tabs">
+                    <!-- Tabs will be populated by script.js -->
+                </div>
+                <div class="editor-container">
+                    <textarea id="codeEditor"></textarea>
+                </div>
+                <div class="console">
+                    <div class="console-header">
+                        <span>Console</span>
+                        <button id="clearConsole" class="console-btn">Clear</button>
+                    </div>
+                    <div id="output" class="console-output"></div>
+                </div>
+            </div>
+            <div class="preview-area">
+                <div class="preview-header">
+                    <span>Preview</span>
+                </div>
+                <iframe id="preview-iframe" class="preview-iframe"></iframe>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      feather.replace()
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <!-- Add modes for different languages as needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/clike/clike.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/php/php.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/swift/swift.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/go/go.min.js"></script>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
